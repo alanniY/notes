@@ -1,76 +1,873 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-CN">
   <head>
     <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
-
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-
-    <title>Notes by alanniY</title>
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="apple-mobile-web-app-capable" content="no" />
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" type="text/css" href="../css/style-style.css" />
+    <link rel="stylesheet" type="text/css" href="../css/style-notes.css">
+    <title>Notes</title>
   </head>
-
   <body>
-    <header>
-      <div class="inner">
-        <h1>Notes</h1>
-        <h2></h2>
-        <a href="https://github.com/alanniY/notes" class="button"><small>View project on</small> GitHub</a>
+    <div class="clear nav-a">
+      <a class="three active" data-id="one">前端</a>
+      <a class="three" data-id="tow">新前端</a>
+      <a class="three" data-id="three">book</a>
+    </div>
+    <div class="tab-wrap">
+      <div class="tab-item active" id="one">
+        <div class="item">
+          <p>两端对齐</p>
+          <div class="hide" id="data-one" data-name-11="aa" data-hehe-q="hehe">
+            <p class="p"><code>text-align:justify;</code></p>
+            <code>text-justify:distribute-all-lines;/*ie6-8*/</code>
+            <code>text-align-last:justify;/* ie9*/</code>
+            <code>-moz-text-align-last:justify;/*ff*/</code>
+            <code>-webkit-text-align-last:justify;/*chrome 20+*/</code>
+          </div>
+        </div>
+        <div class="item">
+          <p>背景图片视觉差</p>
+          <div class="hide">
+            <code>.new-bg:before {</code>
+            <code>content: ' ';</code>
+            <code>position: fixed;</code>
+            <code>z-index: -1;</code>
+            <code>top: 0;</code>
+            <code>right: 0;</code>
+            <code>bottom: 0;</code>
+            <code>left: 0;</code>
+            <code>background: url(/assets/activity/crowdfundings/bg-0.jpg) no-repeat top left;</code>
+            <code>background-size: cover;</code>
+            <code>}</code>
+          </div>
+        </div>
+        <div class="item">
+          <p>tel</p>
+          <div class="hide">
+            <code>&lta href="tel:18688888888"&gt拨号&lt/a&gt</code>
+            <code>&lta href="sms:18688888888"&gt发短信&lt/a&gt</code>
+          </div>
+        </div>
+        <div class="item">
+          <p>行内元素换行BUG<span>会有3像素的margin-left</span></p>
+          <div class="hide">
+            <code>1.  删除换行可解决问题</code>
+            <code>2.  使用float: left;</code>
+          </div>
+        </div>
+        <div class="item">
+          <p>动画</p>
+          <div class="hide">
+            <code>.circle-run {</code>
+            <code>transform: rotate(0deg);</code>
+            <code>-webkit-transform: rotate(0deg); /* Safari 和 Chrome */</code>
+            <code>-webkit-animation: circleIn 4s linear infinite;</code>
+            <code>animation: circleIn 4s linear infinite;</code>
+            <code>}</code>
+            <code>@-webkit-keyframes circleIn {</code>
+            <code>to {  transform:rotate(360deg);</code>
+            <code>-ms-transform:rotate(360deg); /* Internet Explorer */</code>
+            <code>-moz-transform:rotate(360deg); /* Firefox */</code>
+            <code>-webkit-transform:rotate(360deg); /* Safari 和 Chrome */</code>
+            <code>-o-transform:rotate(360deg); /* Opera */  }</code>
+            <code>}</code>
+            <code>@keyframes circleIn {</code>
+            <code>to {  transform:rotate(360deg);</code>
+            <code>-ms-transform:rotate(360deg); /* Internet Explorer */</code>
+            <code>-moz-transform:rotate(360deg); /* Firefox */</code>
+            <code>-webkit-transform:rotate(360deg); /* Safari 和 Chrome */</code>
+            <code>-o-transform:rotate(360deg); /* Opera */  }</code>
+            <code>}</code>
+            <code>.up-down {</code>
+            <code>background-position: center bottom;</code>
+            <code>-webkit-animation: upDown 1s ease infinite;</code>
+            <code>animation: upDown 1s ease infinite;</code>
+            <code>}</code>
+            <code>@-webkit-keyframes upDown {</code>
+            <code>to {  background-position: center top;  }</code>
+            <code>}</code>
+            <code>@keyframes upDown {</code>
+            <code>to {  background-position: center top;  }</code>
+            <code>}</code>
+          </div>
+        </div>
+        <div class="item">
+          <p>属性选择器</p>
+          <div class="hide">
+            <code>a[title="站长统计"] {</code>
+            <code>display: none;</code>
+            <code>}</code>
+            <code>input[type="radio"] {</code>
+            <code>-webkit-appearance: none;</code>
+            <code>display: none;</code>
+            <code>}</code>
+          </div>
+        </div>
+        <div class="item">
+          <p>在不同屏幕大小的手机上，如何保持文字超出两行，则显示省略号</p>
+          <div class="hide">
+            <code>overflow: hidden;</code>
+            <code>text-overflow: ellipsis;</code>
+            <code>display: -webkit-box;</code>
+            <code>line-clamp: 2;</code>
+            <code>-webkit-line-clamp: 2;</code>
+            <code>-webkit-box-orient: vertical;</code>
+          </div>
+        </div>
+        <div class="item">
+          <p>pc端改变滚动条样式</p>
+          <div class="hide">
+            <code>::-webkit-scrollbar {</code>
+            <code>width: 8px;</code>
+            <code>}</code>
+            <code>::-webkit-scrollbar-button {</code>
+            <code>width: 8px;</code>
+            <code>height:5px;</code>
+            <code>}</code>
+            <code>::-webkit-scrollbar-track {</code>
+            <code>background:#eee;</code>
+            <code>border: thin solid #eee;</code>
+            <code>box-shadow: 0px 0px 3px #dfdfdf inset;</code>
+            <code>border-radius:10px;</code>
+            <code>}</code>
+            <code>::-webkit-scrollbar-thumb {</code>
+            <code>background:red;</code>
+            <code>border: thin solid gray;</code>
+            <code>border-radius:10px;</code>
+            <code>}</code>
+            <code>::-webkit-scrollbar-thumb:hover {</code>
+            <code>background:#7d7d7d;</code>
+            <code>}</code>
+            <code>overflow: hidden;</code>
+            <code>text-overflow: ellipsis;</code>
+            <code>display: -webkit-box;</code>
+            <code>line-clamp: 2;</code>
+            <code>-webkit-line-clamp: 2;</code>
+            <code>-webkit-box-orient: vertical;</code>
+          </div>
+        </div>
+        <div class="item">
+          <p>判断微信、终端系统</p>
+          <div class="hide">
+            <code>function is_weixin() {</code>
+            <code>ar ua = window.navigator.userAgent.toLowerCase();</code>
+            <code>var u = navigator.userAgent, app = navigator.appVersion;</code>
+            <code>var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Linux') > -1; //g</code>
+            <code>var isIOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端</code>
+            <code>if (isAndroid && ua.match(/MicroMessenger/i) == 'micromessenger') {</code>
+            <code>$('.Android').addClass('modal_share');</code>
+            <code>}</code>
+            <code>}</code>
+          </div>
+        </div>
+        <div class="item">
+          <p>热点</p>
+          <div class="hide">
+            <code>&ltdiv usemap: "#jiangsuMap"&gt&lt/div&gt</code>
+            <code>&ltmap name="jiangsuMap"&gt</code>
+            <code>&ltarea shape="polygon" data-coo="193,130,267,165,195,48" /&gt</code>
+            <code>&lt/map&gt</code>
+          </div>
+        </div>
+        <div class="item">
+          <p>font-family</p>
+          <div class="hide">
+            <code>safari 浏览器显示宋体问题</code>
+            <code>font-family: 'Microsoft Yahei',Helvetica,Tahoma,arial,sans-serif;</code>
+          </div>
+        </div>
+        <div class="item">
+          <p>模糊背景图片</p>
+          <div class="hide">
+            <code>-webkit-filter: blur(15px);</code>
+            <code>-moz-filter: blur(15px);</code>
+            <code>filter: blur(15px);</code>
+            <code>filter: progid:DXImageTransform.Microsoft.Blur(PixelRadius=15, MakeShadow=false);</code>
+          </div>
+        </div>
+        <div class="item">
+          <p>去除input、select默认样式</p>
+          <div class="hide">
+            <code>input[type="radio"] {</code>
+            <code>-webkit-appearance: none;</code>
+            <code>}</code>
+            <code>input::-webkit-outer-spin-button,</code>
+            <code>input::-webkit-inner-spin-button {</code>
+            <code>-webkit-appearance: none;</code>
+            <code>}</code>
+            <code>select {</code>
+            <code>-webkit-appearance: none;</code>
+            <code>}</code>
+          </div>
+        </div>
+        <div class="item">
+          <p>整个页面垂直居中</p>
+          <div class="hide">
+            <code>css:</code>
+            <code>.div_table {</code>
+            <code>display: table;</code>
+            <code>position: absolute;</code>
+            <code>height: 100%;</code>
+            <code>}</code>
+            <code>.div_cell {</code>
+            <code>display: table-cell;</code>
+            <code>vertical-align: middle;</code>
+            <code>}</code>
+            <code>html:</code>
+            <code>&ltdiv class=“div_table”&gt</code>
+            <code>&ltdiv class=“div_cell”&gt&lt/div&gt</code>
+            <code>&lt/div&gt</code>
+          </div>
+        </div>
+        <div class="item">
+          <p>iPhone专有bug</p>
+          <div class="hide">
+            <code>电话号码被自动变成白色：</code>
+            <code>&ltinput type="text" value=“13764741501” readonly /&gt&lt/code&gt</code>
+            <code>隐藏input圆角边：</code>
+            <code>input {</code>
+            <code>border-radius: 0;</code>
+            <code>}</code>
+          </div>
+        </div>
+        <div class="item">
+          <p>input属性placeholder修改样式</p>
+          <div class="hide">
+            <code>input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {</code>
+            <code>color: #ea5413;</code>
+            <code>letter-spacing:15px;</code>
+            <code>}</code>
+            <code>input:-moz-placeholder, textarea:-moz-placeholder {</code>
+            <code>color: #ea5413;</code>
+            <code>letter-spacing:15px;}</code>
+            <code>input::-moz-placeholder, textarea::-moz-placeholder {</code>
+            <code>color: #ea5413;</code>
+            <code>letter-spacing:15px;</code>
+            <code>}</code>
+            <code>input:-ms-input-placeholder, textarea:-ms-input-placeholder {</code>
+            <code>color: #ea5413;</code>
+            <code>letter-spacing:15px;</code>
+            <code>}</code>
+          </div>
+        </div>
+        <div class="item">
+          <p>禁止滑动页面</p>
+          <div class="hide">
+            <code>// 禁止页面滑动</code>
+            <code>function prohibit() {</code>
+            <code>Ss = $(window).scrollTop();</code>
+            <code>$('body').css({'position': 'fixed','top': -Ss});</code>
+            <code>}</code>
+            <code>// 启动页面滑动(回到原位)</code>
+            <code>function relieve() {</code>
+            <code>$('body').css({'position': 'static'});</code>
+            <code>$('body').scrollTop(0);</code>
+            <code>}</code>
+          </div>
+        </div>
+        <div class="item">
+          <p>判断滚到页面底部</p>
+          <div class="hide">
+            <code>$(window).scroll(function(){</code>
+            <code>var scrollTop = $(this).scrollTop();</code>
+            <code>var scrollHeight = $(document).height();</code>
+            <code>var windowHeight = $(this).height();</code>
+            <code>if(scrollTop + windowHeight == scrollHeight){</code>
+            <code>$('#mall_show_3').addClass('hide');</code>
+            <code>$('#mall_show_4').removeClass('hide');</code>
+            <code>}</code>
+            <code>});</code>
+          </div>
+        </div>
+        <div class="item">
+          <p>设置小于12像素文字</p>
+          <div class="hide">
+            <code>css {</code>
+            <code>font-size: 9px;</code>
+            <code>-webkit-text-size-adjust: none;</code>
+            <code>}</code>
+          </div>
+        </div>
+        <div class="item">
+          <p>绝对定位居中</p>
+          <div class="hide">
+            <code>position: absolute;</code>
+            <code>top: 0;</code>
+            <code>left: 0;</code>
+            <code>display: inline-block;</code>
+            <code>width: 100%;</code>
+            <code>text-align: center;</code>
+          </div>
+        </div>
+        <div class="item">
+          <p>select</p>
+          <div class="hide">
+            <code>select</code>
+            <code>html：</code>
+            <code>&ltdiv class="col-xs-12"&gt</code>
+            <code>&ltp>退货原因&ltspan&gt*&lt/span&gt&lt/p&gt</code>
+            <code>&ltdiv class="mall_select_re"&gt</code>
+            <code>&ltselect&gt</code>
+            <code>&ltoption&gt我要换货&lt/option&gt</code>
+            <code>&ltoption&gt中评&lt/option&gt</code>
+            <code>&ltoption&gt差评&lt/option&gt</code>
+            <code>&lt/select&gt</code>
+            <code>&lt%= image_tag 'mall/select.png', class: "mall_select_img" %&gt</code>
+            <code>&lt/div&gt</code>
+            <code>&lt/div&gt</code>
+            <code>css：</code>
+            <code>.mall_select_re {</code>
+            <code>position: relative;</code>
+            <code>}</code>
+            <code>.mall_select_re select {</code>
+            <code>width: 100%;</code>
+            <code>-webkit-appearance: none;</code>
+            <code>border-radius: 0;</code>
+            <code>background-color: #fff;</code>
+            <code>height: 34px;</code>
+            <code>margin-bottom: 10px;</code>
+            <code>padding-left: 10px;</code>
+            <code>color: #999;</code>
+            <code>border: 1px solid #ccc;</code>
+            <code>}</code>
+            <code>.mall_select_re img {</code>
+            <code>position: absolute;</code>
+            <code>top: 45px;</code>
+            <code>right: 15px;</code>
+            <code>width: 14px;</code>
+            <code>}</code>
+            <code>js：</code>
+            <code>// 点击div触发select</code>
+            <code>$('.mall_select_img').on('click', function() {</code>
+            <code>open($(this).parent().find('select'));</code>
+            <code>});</code>
+            <code>function open(elem) {</code>
+            <code>if (document.createEvent) {</code>
+            <code>var e = document.createEvent("MouseEvents");</code>
+            <code>e.initMouseEvent("mousedown", true, true, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null);</code>
+            <code>elem[0].dispatchEvent(e);</code>
+            <code>} else if (element.fireEvent) {</code>
+            <code>elem[0].fireEvent("onmousedown");</code>
+            <code>}</code>
+            <code>}</code>
+          </div>
+        </div>
+        <div class="item">
+          <p>点击div触发select</p>
+          <div class="hide">
+            <code>$('.mall_select_img').click(function() {</code>
+            <code>open($(this).prev('select'));</code>
+            <code>});</code>
+            <code>function open(elem) {</code>
+            <code>if (document.createEvent) {</code>
+            <code>var e = document.createEvent("MouseEvents");</code>
+            <code>e.initMouseEvent("mousedown", true, true, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null);</code>
+            <code>elem[0].dispatchEvent(e);</code>
+            <code>} else if (element.fireEvent) {</code>
+            <code>elem[0].fireEvent("onmousedown");</code>
+            <code>}</code>
+            <code>}</code>
+          </div>
+        </div>
+        <div class="item">
+          <p>文字● </p>
+        </div>
+        <div class="item">
+          <p>图片居中</p>
+          <div class="hide">
+            <code>.div img {</code>
+            <code>display:block;</code>
+            <code>margin: 0 auto;</code>
+            <code>}</code>
+          </div>
+        </div>
+        <div class="item">
+          <p>2d旋转</p>
+          <div class="hide">
+            <code>position: absolute;</code>
+            <code>transform:rotate(315deg);</code>
+            <code>-ms-transform:rotate(315deg); /* Internet Explorer */</code>
+            <code>-moz-transform:rotate(315deg); /* Firefox */</code>
+            <code>-webkit-transform:rotate(315deg); /* Safari 和 Chrome */</code>
+            <code>-o-transform:rotate(315deg); /* Opera */</code>
+          </div>
+        </div>
+        <div class="item">
+          <p>半透明背景</p>
+          <div class="hide">
+            <code>background-color: rgba(0, 0, 0, .5);</code>
+          </div>
+        </div>
+        <div class="item">
+          <p>三角形</p>
+          <div class="hide">
+            <code>width:0;</code>
+            <code>height:0;</code>
+            <code>border-top:30px solid transparent;</code>
+            <code>border-bottom:30px solid transparent;</code>
+            <code>border-right:30px solid yellow;</code>
+          </div>
+        </div>
+        <div class="item">
+          <p>query与zepto冲突问题</p>
+          <div class="hide">
+            <code>重命名$</code>
+            <code>var jq = $(query);</code>
+            <code>jq(function(){</code>
+            <code>});</code>
+          </div>
+        </div>
+        <div class="item">
+          <p>水波</p>
+          <div class="hide">
+            <code>&ltdiv class="scale"&gt</code>
+            <code>&lt%=image_tag 'huigu/html5icon.png', class: "scaleout"%&gt</code>
+            <code>&lt/div&gt</code>
+            <code>.scale {</code>
+            <code>background:url('huigu/html5icon.png') no-repeat;</code>
+            <code>width: 185px;</code>
+            <code>height: 185px;</code>
+            <code>background-color: #000;</code>
+            <code>}</code>
+            <code>.scaleout {</code>
+            <code>animation: scaleout 1.3s ease-in-out infinite;</code>
+            <code>-moz-animation: scaleout 1.3s ease-in-out infinite;</code>
+            <code>-webkit-animation: scaleout 1.3s ease-in-out infinite;</code>
+            <code>}</code>
+            <code>@keyframes scaleout {</code>
+            <code>0% {</code>
+            <code>transform: scale(1);</code>
+            <code>}</code>
+            <code>100% {</code>
+            <code>opacity: 0;</code>
+            <code>transform: scale(1.1);</code>
+            <code>}</code>
+            <code>}</code>
+            <code>@-moz-keyframes scaleout {</code>
+            <code>0% {</code>
+            <code>-moz-transform: scale(1);</code>
+            <code>}</code>
+            <code>100% {</code>
+            <code>opacity: 0;</code>
+            <code>-moz-transform: scale(1.1);</code>
+            <code>}</code>
+            <code>}</code>
+            <code>@-webkit-keyframes scaleout {</code>
+            <code>0% {</code>
+            <code>-webkit-transform: scale(1);</code>
+            <code>}</code>
+            <code>100% {</code>
+            <code>opacity: 0;</code>
+            <code>-webkit-transform: scale(1.1);</code>
+            <code>}</code>
+            <code>}</code>
+          </div>
+        </div>
+        <div class="item">
+          <p>首页淡出切换页面</p>
+          <div class="hide">
+            <code>$(‘.map_face_img').fadeOut(1000,function(){</code>
+            <code>$('.page-1-2').removeClass('hide', function(){</code>
+            <code>$('.page-1-2').fadeIn(1500);</code>
+            <code>});</code>
+            <code>});</code>
+          </div>
+        </div>
+        <div class="item">
+          <p>a链接跳转新窗口</p>
+          <div class="hide">
+            <code>&lta href="" target="_blank"&gt&lt/a&gt</code>
+          </div>
+        </div>
+        <div class="item">
+          <p>边框线条动画</p>
+          <div class="hide">
+            <code>html：</code>
+            <code><div class="bb"></div></code>
+            <code>css:</code>
+            <code>.bb, .bb::before, .bb::after {</code>
+            <code>position: absolute;</code>
+            <code>top: 0;</code>
+            <code>bottom: 0;</code>
+            <code>left: 0;</code>
+            <code>right: 0;</code>
+            <code>}</code>
+            <code>.bb {</code>
+            <code>width: 200px;</code>
+            <code>height: 200px;</code>
+            <code>margin: auto;</code>
+            <code>color: #69ca62;</code>
+            <code>box-shadow: inset 0 0 0 1px rgba(105, 202, 98, 0.5);</code>
+            <code>}</code>
+            <code>.bb::before, .bb::after {</code>
+            <code>content: '';</code>
+            <code>z-index: -1;</code>
+            <code>margin: -5%;</code>
+            <code>box-shadow: inset 0 0 0 2px;</code>
+            <code>animation: clipMe 8s linear infinite;</code>
+            <code>}</code>
+            <code>.bb::before {</code>
+            <code>animation-delay: -4s;</code>
+            <code>}</code>
+            <code>@keyframes clipMe {</code>
+            <code>0%, 100% {</code>
+            <code>clip: rect(0px, 220.0px, 2px, 0px);</code>
+            <code>}</code>
+            <code>25% {</code>
+            <code>clip: rect(0px, 2px, 220.0px, 0px);</code>
+            <code>}</code>
+            <code>50% {</code>
+            <code>clip: rect(218.0px, 220.0px, 220.0px, 0px);</code>
+            <code>}</code>
+            <code>75% {</code>
+            <code>clip: rect(0px, 220.0px, 220.0px, 218.0px);</code>
+            <code>}</code>
+            <code>}</code>
+          </div>
+        </div>
+        <div class="item">
+          <p>滤镜（悬浮，背景图片改变颜色／透明度／模糊度……）</p>
+          <div class="hide">
+            <code>html:</code>
+            <code><div class="artist-image attraction-image"></div></code>
+            <code>css:</code>
+            <code>.attraction-image {</code>
+            <code>max-width: 20%;</code>
+            <code>background-image:url(http://resonate.io/2015/wp-content/uploads/2014/11/SW-238x358.jpg);</code>
+            <code>background-size: cover;</code>
+            <code>background-repeat: no-repeat;</code>
+            <code>background-position: center;</code>
+            <code>cursor: pointer;</code>
+            <code>}</code>
+            <code>.artist-image {</code>
+            <code>min-height: 160px;</code>
+            <code>-webkit-filter: blur(3px);</code>
+            <code>filter: blur(3px);</code>
+            <code>-webkit-transform: translateZ(0);</code>
+            <code>}</code>
+            <code>.artist-image:hover {</code>
+            <code>-webkit-filter: blur(0);</code>
+            <code>filter: blur(0);</code>
+            <code>}</code>
+          </div>
+        </div>
+        <div class="item">
+          <p>背景图片撑满</p>
+          <div class="hide">
+            <code>width: 100%;</code>
+            <code>background:url('huigu/baye.jpg') no-repeat 100% 70%;</code>
+            <code>-webkit-background-size:cover;</code>
+            <code>-moz-background-size:cover;</code>
+            <code>-o-background-size:cover;</code>
+            <code>background-size:cover;</code>
+          </div>
+        </div>
+        <div class="item">
+          <p>禁止用户拖动textarea</p>
+          <div class="hide">
+            <code>resize: none;</code>
+          </div>
+        </div>
+        <div class="item">
+          <p>背景图片撑满</p>
+          <div class="hide">
+            <code>width: 100%;</code>
+            <code>background:url('huigu/baye.jpg') no-repeat 100% 70%;</code>
+            <code>-webkit-background-size:cover;</code>
+            <code>-moz-background-size:cover;</code>
+            <code>-o-background-size:cover;</code>
+            <code>background-size:cover;</code>
+          </div>
+        </div>
+        <div class="item">
+          <p>margin-top负值与背景色文档流层级问题</p>
+          <div class="hide">
+            <code>将此类，position:relative;</code>
+          </div>
+        </div>
       </div>
-    </header>
-
-    <div id="content-wrapper">
-      <div class="inner clearfix">
-        <section id="main-content">
-          <h3>
-<a id="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Welcome to GitHub Pages.</h3>
-
-<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here <a href="https://guides.github.com/features/mastering-markdown/">using GitHub Flavored Markdown</a>, select a template crafted by a designer, and publish. After your page is generated, you can check out the new <code>gh-pages</code> branch locally. If you’re using GitHub Desktop, simply sync your repository and you’ll see the new branch.</p>
-
-<h3>
-<a id="designer-templates" class="anchor" href="#designer-templates" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Designer Templates</h3>
-
-<p>We’ve crafted some handsome templates for you to use. Go ahead and click 'Continue to layouts' to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved.</p>
-
-<h3>
-<a id="creating-pages-manually" class="anchor" href="#creating-pages-manually" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Creating pages manually</h3>
-
-<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
-
-<h3>
-<a id="authors-and-contributors" class="anchor" href="#authors-and-contributors" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Authors and Contributors</h3>
-
-<p>You can <a href="https://help.github.com/articles/basic-writing-and-formatting-syntax/#mentioning-users-and-teams" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor’s GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
-
-<h3>
-<a id="support-or-contact" class="anchor" href="#support-or-contact" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Support or Contact</h3>
-
-<p>Having trouble with Pages? Check out our <a href="https://help.github.com/pages">documentation</a> or <a href="https://github.com/contact">contact support</a> and we’ll help you sort it out.</p>
-        </section>
-
-        <aside id="sidebar">
-          <a href="https://github.com/alanniY/notes/zipball/master" class="button">
-            <small>Download</small>
-            .zip file
-          </a>
-          <a href="https://github.com/alanniY/notes/tarball/master" class="button">
-            <small>Download</small>
-            .tar.gz file
-          </a>
-
-          <p class="repo-owner"><a href="https://github.com/alanniY/notes"></a> is maintained by <a href="https://github.com/alanniY">alanniY</a>.</p>
-
-          <p>This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
-        </aside>
+      <div class="tab-item" id="tow">
+        <div class="item">
+          <p>sass</p>
+          <div class="hide">
+            <code>http://www.w3cplus.com/sassguide/compile.html</code>
+          </div>
+        </div>
+        <div class="item">
+          <p>背景图片－应用小图标</p>
+          <div class="hide">
+            <code>background: url(/images/dayu.png) no-repeat right center;</code>
+            <code>background-size: 6px auto;</code>
+            <code>background-clip: content-box;</code>
+          </div>
+        </div>
+        <div class="item">
+          <p>阴影</p>
+          <div class="hide">
+            <code>.box {</code>
+            <code>position: relative;</code>
+            <code>display: inline-block;</code>
+            <code>width: 100px;</code>
+            <code>height: 100px;</code>
+            <code>background-color: #fff;</code>
+            <code>border-radius: 5px;</code>
+            <code>box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);</code>
+            <code>border-radius: 5px;</code>
+            <code>-webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);</code>
+            <code>transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);</code>
+            <code>}</code>
+            <code>.box::after {</code>
+            <code>content: "";</code>
+            <code>border-radius: 5px;</code>
+            <code>position: absolute;</code>
+            <code>z-index: -1;</code>
+            <code>top: 0;</code>
+            <code>left: 0;</code>
+            <code>width: 100%;</code>
+            <code>height: 100%;</code>
+            <code>box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);</code>
+            <code>opacity: 0;</code>
+            <code>-webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);</code>
+            <code>transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);</code>
+            <code>}</code>
+            <code>.box:hover {</code>
+            <code>-webkit-transform: scale(1.25, 1.25);</code>
+            <code>transform: scale(1.25, 1.25);</code>
+            <code>}</code>
+            <code>.box:hover::after {</code>
+            <code>opacity: 1;</code>
+            <code>}</code>
+          </div>
+        </div>
+        <div class="item">
+          <p>SVG</p>
+          <div class="hide">
+            <code>https://convertio.co/zh/jpg-svg/</code>
+          </div>
+        </div>
+        <div class="item">
+          <p>实现一张图片在不同的地方只显示其中的一部分</p>
+          <div class="hide">
+            <code>css:</code>
+            <code>.back div span {</code>
+            <code>display: inline-block;</code>
+            <code>width: 50px;</code>
+            <code>height: 50px;</code>
+            <code>background: #fff url(/images/haha.png) no-repeat right;</code>
+            <code>background-size: 1000px;</code>
+            <code>background-clip: content-box;</code>
+            <code>}</code>
+            <code>.back div span.back_1 {</code>
+            <code>background-position: 0 -25px;</code>
+            <code>}</code>
+            <code>.back div span.back_2 {</code>
+            <code>background-position: -80px -30px;</code>
+            <code>}</code>
+            <code>html:</code>
+            <code>&ltdiv class="back"&gt</code>
+            <code>&ltdiv&gt</code>
+            <code>&ltspan class="back_1"&gt&lt/span&gt</code>
+            <code>&lt/div&gt</code>
+            <code>&ltdiv&gt</code>
+            <code>&ltspan class="back_2"&gt&lt/span&gt</code>
+            <code>&lt/div&gt</code>
+            <code>&lt/div&gt</code>
+          </div>
+        </div>
+        <div class="item">
+          <p>浏览器前缀</p>
+          <div class="hide">
+            <code>-moz      irefox私有属性</code>
+            <code>-ms     ie私有属性</code>
+            <code>-webkit   chrome、safari私有属性</code>
+            <code>-o      opera私有属性</code>
+          </div>
+        </div>
+        <div class="item">
+          <p>jquery动态添加代码块坑</p>
+          <div class="hide">
+            <code>动态添加代码块，响应onclick事件，获得当前对象。</code>
+            <code>js:</code>
+            <code>$(‘&ltdiv class="ranshan-fimaly-lang" onclick="click_keng(this)"&gt&ltinput type="text" class="fimaly-input" placeholder="请选择性别 / 是否成年" readonly /&gt&lt/div&gt').appendTo($('.ranshan-fimaly-body'));</code>
+            <code>function:</code>
+            <code>function click_keng(v) {</code>
+            <code>$(v);</code>
+            <code>v;</code>
+            <code>};</code>
+            <code>解释：</code>
+            <code>$(v) 与 v完全不同</code>
+            <code>v ->  整个元素模块</code>
+            <code>$(v)  ->  元素对象</code>
+          </div>
+        </div>
+        <div class="item">
+          <p>论清除浮动的重要性</p>
+          <div class="hide">
+            <code>浮动了那元素就不占文档流（普通流），不清除浮动布局会错位或其他。问题挺多（你试下不同浏览器，如火狐），div1（没设高度，有高度……即有布局，另论） div2（垂直排列，浮动div1不清除,即div1不占文档）</code>
+            <code>清除浮动：</code>
+            <code>方法1：</code>
+            <code>#test{clear:both;}</code>
+            <code>#test为浮动元素的下一个兄弟元素</code>
+            <code>方法2：</code>
+            <code>#test{display:block;zoom:1;overflow:hidden;}</code>
+            <code>#test为浮动元素的父元素。zoom:1也可以替换为固定的width或height</code>
+            <code>方法3：</code>
+            <code>#test{zoom:1;}</code>
+            <code>#test:after{display:block;clear:both;visibility:hidden;height:0;content:'';}</code>
+            <code>#test为浮动元素的父元素</code>
+          </div>
+        </div>
+        <div class="item">
+          <p>网页加载和渲染的过程</p>
+          <div class="hide">
+            <code>浏览器接收到html代码，可能是一份完整的文档，也可能是一个chunk，即开始解析。解析过程是先构建dom树，再根据dom树构建渲染树，渲染树根据渲染树就会绘制到浏览器上。</code>
+            <code>构建dom树的过程即根据html代码自上而下构建dom树，当遇到script文件加载／执行会阻塞后面dom树的构建（javascript可能会改变dom树），而遇到css文件则会阻塞渲染树的构建，即dom树依然继续构建（除非遇到script标签并且css文件依旧未加载完成），但不会渲染绘制到页面上。而无论哪个阻塞，该加载的文件还是会加载，例如html文档中的其他css／js／图片文件。</code>
+            <code>至于javascript被加载后就会被执行，执行的过程也阻塞树的构建。是执行完了才解析其他内容，而不是执行完了才加载其他内容。</code>
+          </div>
+        </div>
+        <div class="item">
+          <p>水平垂直居中</p>
+          <div class="hide">
+            <code>方法1:</code>
+            <code>html,body {</code>
+            <code>width: 100%;</code>
+            <code>height: 100%;</code>
+            <code>margin: 0;</code>
+            <code>}</code>
+            <code>body {</code>
+            <code>display: flex;/*CSS3的弹性布局（flex）*/</code>
+            <code>align-items: center; /*定义body的元素垂直居中*/</code>
+            <code>justify-content: center; /*定义body的里的元素水平居中*/</code>
+            <code>}</code>
+            <code>方法2:</code>
+            <code>html,body {</code>
+            <code>width: 100%;</code>
+            <code>height: 100%;</code>
+            <code>margin: 0;</code>
+            <code>padding: 0;</code>
+            <code>}</code>
+            <code>.new {</code>
+            <code>width: 400px;</code>
+            <code>height: 300px;</code>
+            <code>margin: 0 auto;</code>
+            <code>position: relative;</code>
+            <code>top: 50%;</code>
+            <code>transform: translateY(-50%);/*div向上平移自身高度的一半*/</code>
+            <code>}</code>
+            <code>方法3:</code>
+            <code>html,body {</code>
+            <code>width: 100%;</code>
+            <code>height: 100%;</code>
+            <code>margin: 0;</code>
+            <code>padding: 0;</code>
+            <code>}</code>
+            <code>.new {</code>
+            <code>width: 400px;</code>
+            <code>height: 300px;</code>
+            <code>margin: 0 auto;</code>
+            <code>position: relative;</code>
+            <code>top: 50%;</code>
+            <code>margin-top: -150px;</code>
+            <code>}</code>
+            <code>方法4:</code>
+            <code>html,body {</code>
+            <code>width: 100%;</code>
+            <code>height: 100%;</code>
+            <code>margin: 0;</code>
+            <code>padding: 0;</code>
+            <code>}</code>
+            <code>.new {</code>
+            <code>width:400px;</code>
+            <code>height:300px;</code>
+            <code>position:absolute;</code>
+            <code>left:50%;</code>
+            <code>top:50%;</code>
+            <code>margin:-150px 0 0 -150px;/*此处上和左外边距的值是div宽和高的一半*/</code>
+            <code>}</code>
+            <code>方法5（垂直居中）:</code>
+            <code>html,body {</code>
+            <code>display: table;</code>
+            <code>position: absolute;</code>
+            <code>width: 100%;</code>
+            <code>height: 100%;</code>
+            <code>}</code>
+            <code>.new {</code>
+            <code>width:400px;</code>
+            <code>height:300px;</code>
+            <code>display: table-cell;</code>
+            <code>vertical-align: middle;</code>
+            <code>}</code>
+            <code>水平垂直居中：</code>
+            <code>.vertical-container {</code>
+            <code>display: -webkit-flex;</code>
+            <code>display: flex;</code>
+            <code>-webkit-align-items: center;</code>
+            <code>align-items: center;</code>
+            <code>-webkit-justify-content: center;</code>
+            <code>justify-content: center;</code>
+            <code>}</code>
+          </div>
+        </div>
+        <div class="item">
+          <p>移动端自适应（640px设计稿，不用除以2）</p>
+          <div class="hide">
+            <code>var phoneWidth = parseInt(window.screen.width);</code>
+            <code>var phoneScale = phoneWidth / 640;</code>
+            <code>var ua = navigator.userAgent;</code>
+            <code>if (/Android (\d+\.\d+)/.test(ua)) {</code>
+            <code>var version = parseFloat(RegExp.$1);</code>
+            <code>// andriod 2.3</code>
+            <code>if (version > 2.3) {</code>
+            <code>document.write('&ltmeta name="viewport" content="width=640, minimum-scale = ' + phoneScale + ', maximum-scale = ' + phoneScale + ', target-densitydpi=device-dpi"&gt');</code>
+            <code>// andriod 2.3以上</code>
+            <code>} else {</code>
+            <code>document.write('&ltmeta name="viewport" content="width=640, target-densitydpi=device-dpi"&gt');</code>
+            <code>}</code>
+            <code>// 其他系统</code>
+            <code>} else {</code>
+            <code>document.write('&ltmeta name="viewport" content="width=640, user-scalable=no, target-densitydpi=device-dpi"&gt');</code>
+            <code>}</code>
+            <code>// 移动端版本兼容 end</code>
+          </div>
+        </div>
+        <div class="item">
+          <p>优先级</p>
+          <div class="hide">
+            <code>0. 元素(类型)选择器（type selectors）（例如：h1）和 伪元素选择器（pseudo-elements）（例如：:before）</code>
+            <code>1. 类选择器（class selectors） (例如：.example)，属性选择器（attributes selectors）（例如：[type="radio"]），伪类选择器（pseudo-classes）（例如：:hover）</code>
+            <code>2. ID选择器（例如：#example）</code>
+            <code>&ltdiv class=“demo show”&gt&lt/div&gt</code>
+            <code>.demo.show   >    .demo</code>
+          </div>
+        </div>
+      </div>
+      <div class="tab-item" id="three">
+        <div class="item">
+          <p>Vue</p>
+          <div class="hide">
+            <p>定义：  是一个构建数据驱动的 web 界面的库。不是一个全能框架——它只聚焦于视图层。</p>
+            <p>目标:   通过尽可能简单的 API 实现响应的数据绑定和组合的视图组件。</p>
+            <p>核心： 是一个响应的数据绑定系统，它让数据与 DOM 保持同步非常简单。</p>
+            <p>重要概念：组件系统 ，让我们可以用独立可复用的小组件来构建大型应用。</p>
+            <p>Vue 实例：其实正是一个MVVM模型中所描述的 ViewModel </p>
+          </div>
+        </div>
+        <div class="item">
+          <p>git</p>
+          <div class="hide">
+            <img src="../img/5-pic.jpg">
+            <img src="../img/4-pic.jpg">
+          </div>
+        </div>
       </div>
     </div>
-
-  
+    <!-- <script type="text/javascript" src="../js/jquery-2.2.4.min.js"></script> -->
+    <script type="text/javascript" src="../js/jquery-3.0.0.min.js"></script>
+    <script type="text/javascript" src="../js/notes.js"></script>
   </body>
 </html>
