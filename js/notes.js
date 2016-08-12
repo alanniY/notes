@@ -11,6 +11,7 @@ $(function(){
       $('.item').parents('.tab-item').find('code').hide(1000);
       $(this).parents('.item').find('code:first-child').show('fast', function(){
         $(this).next().show('fast', arguments.callee);
-      });
+      }),
+    function(){}
   });
 });
